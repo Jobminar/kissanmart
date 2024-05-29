@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="tittle-container">
+        <div class="a"><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        <div class="icon-container"> <i class="material-icons" id="icon">location_on</i>
+        </div>
+          <div>  <h2 id="tittle">Addresses</h2></div>
+    </div>
+
+    <div *ngFor="let address of newAddress" >
+        <div class="add-main"  (click)="sendAddress(address)">
+           <div>
+                <h4 class="Address-tittle"><div [ngClass]="{
+                    'home-bg': address.Type == 'Home',
+                    'office-bg': address.Type == 'Office',
+                    'others-bg': address.Type == 'Others'
+                }" class="title-identity"></div>{{address.Type}}
+                </h4>
+                  <p>{{address.area}}, {{address.address}},
+                    {{address.city}},{{address.state}}, {{address.country}}, {{address.pincode}}</p>
+            </div>
+            <div class="Edit">
+                <a  class="edit-link" (click)="edit(address)"><img src="assets\profile\8666681_edit_icon.png" class="edit-ion">&nbsp;Edit</a>
+                <i class="fa fa-trash" id="delete" aria-hidden="true" (click)="deletes(address)">delete</i>
+            </div>
+
+        </div>
+    </div>
+   
+    <div class="address-button">
+        <button type="button" (click)="navTonewAddress()" >ADD NEW ADDRESS</button>
+    </div>
+</div>
+
+

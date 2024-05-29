@@ -1,0 +1,69 @@
+<div class="arrow"><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+</div>
+<div class="container">
+  <div class="container1">
+    <div class="content">
+      <div><strong id="tittle">KISSAN MART</strong></div>
+      <div id="logo"> <img src="assets\home\kissanmart2 re.png" class="log-img"></div>
+      <div><span id="title2">Forgot Password</span><br></div>
+    </div>
+    <div class="input-continer">
+      <form [formGroup]=" userDetailsForm" (ngSubmit)="details()">
+        <div class="logIn-div">
+          <fieldset class="line">
+            <legend>Email</legend>
+            <div class="number-input"> 
+             
+              <div>
+                <!-- Use form control from FormGroup -->
+                <input type="email" 
+                  id="email" name="email" formControlName="email" class="input-box1" >
+              </div>
+            </div>
+          </fieldset>
+          
+        </div>
+
+        
+        <div *ngIf="hideButton"><button type="submit" class="submit-button">Get Otp</button></div>
+      </form>
+      <div class="logIn-div" *ngIf="showOtp">
+        <fieldset class="line">
+          <legend>Otp</legend>
+          <div class="number-input"> 
+            <div>
+              <input type="text" 
+                id="otp" name="otp" class="input-box1" 
+                [(ngModel)]="otp">
+            </div>
+          </div>
+        </fieldset>
+      
+        <fieldset class="line">
+          <legend>New Password</legend>
+          <div class="number-input"> 
+            <div>
+              <input type="password" 
+                id="newPassword" name="newPassword" class="input-box1" 
+                [(ngModel)]="newPassword"> 
+                
+
+            </div>
+           
+          </div>
+          <input type="checkbox" id="show-password-checkbox" (click)="togglePasswordVisibility($event)">show
+        </fieldset>
+       
+       
+        <div class="">
+          <button type="submit" class="submit-button" (click)="setNewPassword()">Password Set</button>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+  <div class="last"><img src="assets\home\Ellipse 8 (1).png"></div>
+</div>
+
+

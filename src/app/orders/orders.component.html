@@ -1,0 +1,86 @@
+<div class="container">     
+    <div class="tittle-container">
+              <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+              </div>
+          
+              <div>  <h2 id="tittle">Order Details</h2></div>
+    </div>
+  <br>
+    <!-- main start from here -->
+    <div class="main-item" >
+              
+      <div *ngFor="let item of orders ">
+      
+          <div class="container-items">
+          <div class="img-name" > 
+                  <div class="img" ><img [src]="item.itemImage
+                      "></div>
+                  <div id="name" class="text-dex"><span>{{item.itemName}}</span></div>
+          </div>
+          
+        
+                  <div class="price-kgs" >
+                      <span class="text-dex">{{ item.count }}kg</span>
+                  </div>
+                  <div *ngIf="shouldShowCancelButton(item)">
+                      <button type="button" class="removeBtn" (click)="cancel(item)">Cancel</button>
+                  </div>
+                  <div class="price-kgs">
+                  <span  class="text-dex">&#8377;{{item.price}}</span>
+                  </div>
+              
+          </div>
+      <hr>
+      </div>
+    </div>
+    <h1 class="countTittle" >Bill details</h1>
+    <div class="bill-container">
+        <div class="mrp">
+            <p>MRP</p>
+            <P>&#8377;{{total}}</P>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="delivery-charge">
+            <p>delivery charge</p>
+            <p>&#8377;{{deliveryCharges}}</p>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="delivery-charge">
+            <p>Handling Charges</p>
+            <p>&#8377;{{handlingCharges}}</p>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="delivery-charge">
+            <p>Total</p>
+            <span *ngIf="total>0; else ElseBlocktotal"><p>&#8377;{{grandTotal}}</p></span>
+            <ng-template #ElseBlocktotal><p>&#8377;0</p></ng-template>
+        </div>
+    </div>
+  
+    <br>
+    <h1 class="countTittle" >Delivery address</h1>
+    <div class="address-section">
+        <div class="address-sub">
+          
+            
+            <div>
+                <div *ngFor="let item of address | keyvalue">
+                    <ng-container *ngIf="item.key==='Type'">
+                        <h4 class="Address-tittle"><div class="title-identity"></div>{{item.value}}</h4></ng-container>
+                </div>
+                <div *ngFor="let item of address | keyvalue">
+                  
+                    <ng-container *ngIf="!excludedKeys.includes(item.key)">
+                        <p>{{ item.value }}</p>
+                    </ng-container>
+                    <ng-container *ngIf="item.key==='country'">
+                       <p> {{item.value}}</p></ng-container>
+                  
+                </div>
+            </div>
+          </div>
+    </div>
+  </div> 
+  
+  
+  

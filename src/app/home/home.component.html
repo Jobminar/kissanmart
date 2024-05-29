@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="header">
+        <div id="logo-container">
+            <div class="logo">
+            <img src="assets\home\kissanmart2 logo.png" class="logo-img">
+            </div>
+            <div class="tittle"> <span class="tittle-text">KISSAN MART</span></div>  
+        </div>
+        <div class="buttons-container">
+
+            <div><button><i class="material-icons"  id="icon" (click)="navToNotification()">notifications</i></button></div>
+            
+        </div>
+    </div>
+     <div>
+           <div id="scearch">
+            <form >
+                <input type="text" [(ngModel)]="searchTerm" name="searchTerm" id="scearch-input"   
+                  (click)="navToScearch()">
+                <img src="assets\cil_search.png" id="scearch-logo">
+            </form>
+            
+         </div>
+    </div>
+    <div style="width: 100px;height: 3.75rem;">
+
+    </div>
+    <div class="wrapperrr" >
+        <div *ngFor="let ad of ads" class="ads-div">
+            <div class="slidesss" class="ads">
+                <img [src]="'data:image/jpeg;base64,' + ad" alt="Image">
+            </div>
+        </div>
+    </div>
+  
+    <!-- <p id="note">Note : we charge 2% convience fee and 40 rupees handling charges,
+        these prices are subjected to changes and revised prices would be
+        updated tp the customers. No Delivery charges
+    </p> -->
+    <br>
+    <div class="category-container">
+        <h1 style=" font-family: 'Inter';font-size: 1.375rem;">Shop by category</h1>
+        <div class="category">
+            <div id="vegetables"><img src="assets\Rectangle 4.png" (click)="navgateToFreshVegetables()" class="cat-images" >
+                <p >Fresh vegetables</p>
+            </div>
+            <div id="fruits"><img src="assets\Rectangle 5.png" (click)="navigateToDestination()" class="cat-images">
+                <p >Fresh fruits</p>
+            </div>
+        </div>
+    </div>
+    <div id="offer-container">
+        <h1 style=" font-family: 'Roboto', sans-serif;font-size: 1.375rem;">Offer zone
+        <img src="assets/bxs_offer.png" ></h1>
+        <div class="wrapper">
+            <div *ngFor="let offer of offers">
+                <div *ngIf="offer.name === 'offerZone'">
+                <div class="slider" class="offer-tittle-con"><img [src]="offer.src">
+                    <div class="offer-tittle"><pre>{{offer.discount}}%off </pre></div>
+                </div>
+                <div class="details">
+                    <div class="name-product"><p class="name-Offer">{{offer.itemname}}</p></div>
+                    <div class="price-containers">
+                        <div class="price">
+                            &#8377;<div>{{offer.costPerUnit*offer.count}}</div>
+                        </div>
+                    
+                        <!-- <div  class="button-container">
+                            <button type="submit" (click)="decreaseCount(offer)">-</button>
+                            <ng-container *ngIf=" offer.count <= 5; else elseBlock2" class="item-count">
+                            <span >{{offer.count }}kg</span>
+                            </ng-container>
+                            <ng-template #elseBlock2>
+                            <div class="alert-container" *ngIf="showAlerts">
+                                <div class="alert-box">
+                                    <p>For orders bryond 5kgs</p>
+                                    <p>Please contact our store</p>
+                                    <div class="alert-button">
+                                        <button (click)="hideAlert(offer)">CALL NOW</button>
+                                        <button (click)="hideAlert(offer)">OK</button>
+                                </div>
+                                </div>
+                                </div>
+                            </ng-template>
+                            <button type="submit" (click)="increaseCount(offer)" id="plusButton">+</button>
+                        </div> -->
+                        <div class="button-container">
+                            <button type="submit" (click)="decreaseCount(offer)">-</button>
+                                 <ng-container *ngIf="offer.count <= 5; else elseBlock">
+                                    <span>{{ offer.count }}kg</span>
+                                  </ng-container>
+                                  <ng-template #elseBlock>
+                                    <div class="alert-container" *ngIf="showAlert">
+                                        <div class="alert-box">
+                                          <p>For orders bryond 5kgs</p>
+                                          <p>Please contact our store</p>
+                                          <div class="alert-button">
+                                              <button (click)="hideAlert(offer)">CALL</button>
+                                              <button (click)="hideAlert(offer)">OK</button>
+                                        </div>
+                                        </div>
+                                      </div>
+                                  </ng-template>
+                                
+                            <button type="submit" (click)="increaseCount(offer)" id="plusButton">+</button>
+                          </div>
+                    </div>
+                    <button type="submit"  class="add-button"[style.background]="offer.button.buttonColor" (click)="toggleButtonState(offer)" (click)="share()" (click)="addingItems(offer)"> {{ offer.button.buttonText }} </button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>  
+    <br>
+    <div class="pickup-continer">
+        <h1 style=" font-family: 'Roboto', sans-serif;font-size: 1.375rem;">Quick picks for you</h1>
+        <div class="wrapper">
+            <div *ngFor="let picks of quickPickUp" >
+
+                <div *ngIf="picks.name === 'quickPicks'">
+                <div class="slider" class="offer-tittle-con"><img [src]="picks.src" class="img">
+                    <div class="offer-tittle"><pre>{{picks.discount}}%off </pre></div>
+                </div>
+                <div class="details">
+                    <div class="name-product">{{picks.itemname}}</div>
+                    <div class="price-containers">
+                        <div class="price">
+                          RS. <!--<del>120</del>&nbsp; --> 
+                            <div>{{picks.costPerUnit*picks.count}}</div>
+                        </div>
+                    
+                        <div  class="button-container">
+                            <button type="submit" (click)="decreaseCount(picks)">-</button>
+                            <ng-container *ngIf="picks.count <= 5; else elseBlock2">
+                            <span>{{picks.count }}kg</span>
+                            </ng-container>
+                            <ng-template #elseBlock2>
+                            <div class="alert-container" *ngIf="showAlerts">
+                                <div class="alert-box">
+                                    <p>For orders bryond 5kgs</p>
+                                    <p>Please contact our store</p>
+                                    <div class="alert-button">
+                                        <button (click)="callToMart()">CALL NOW</button>
+                                        <button (click)="hideAlert(picks)">OK</button>
+                                </div>
+                                </div>
+                                </div>
+                            </ng-template>
+                            <button type="submit" (click)="increaseCount(picks)" id="plusButton">+</button>
+                        </div>
+                        
+                    </div>
+                    <button type="submit"  class="add-button" [style.background]="picks.button.buttonColor" (click)="toggleButtonState(picks)" (click)="share()" (click)="addingItems(picks)"> {{ picks.button.buttonText }} </button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf=logInStatus class="alert-logIn">
+        <span>need to log in first</span>
+        <button type="submit">ok</button>
+      </div>
+
+</div>
+<div style="height: 3.3rem;"></div>
+<!-- <div ><img src="assets\fotter\Voice order.png"  class="voiccee" (click)="navToVoice()"/></div> -->
+<br>
+<br>
+<br>
+<app-fotter></app-fotter>
+<app-fotter #fotter></app-fotter>
+
+<div class="loadings" *ngIf="isLoading">
+    <!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
+    <mat-spinner></mat-spinner>
+</div>

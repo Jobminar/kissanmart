@@ -1,0 +1,113 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+    {
+        margin: 1rem;
+    }
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+        margin-bottom: 2rem;
+      
+    }
+    #tittle
+    {
+        font-family: 'inter';
+        font-weight: 500;
+      font-size: 1.3rem;
+       margin-top: 0.2rem;
+      margin-left: 0.313rem;
+    }
+    .logo-div
+    {
+        width: 2.313rem;
+        height: 2.313rem;
+        border-radius: 50%;
+        background-color: #00853E;
+        color: aliceblue;
+        text-align: center;
+        margin-top: -0.25rem;
+    }
+    #logo
+    {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 0rem;
+        margin-top: 0.2rem;
+        
+    }
+    .details-section
+    {
+        margin-top: 0.5rem;
+        /*margin-left: 0.9rem;
+        margin-bottom: 0; */
+       display: flex; 
+       /* width: 19.688rem; */
+       /* border: 1rem solid black; */
+    }
+    .num
+    {   
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid rgb(250, 5, 5); */
+        /* text-align: center; */
+    }
+    .mail
+    {
+        width: 80%;
+        height: 1rem;
+        /* margin: -1rem; */
+        padding: 0;
+        background: transparent;
+        /* border: 1px solid black; */
+    }
+    
+    .edit-ion
+    {
+        width: 1rem;
+        height: 1rem;
+       
+    }
+    .edit-link {
+        color: #959494;
+        text-decoration: none;
+    }
+    .slide
+    {
+        
+        display: flex;
+        justify-content: space-between;
+    }
+    .slide button
+    {
+        background:none;
+        border: 0;
+        margin-left: 0.1rem;
+        font-family: inter;
+        font-weight: 400;
+        size: 1rem;
+        height: 1.2rem;
+    }
+    .Edit i{
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+    
+    .details-section input
+    {
+        width: 11rem;
+        border: 0;
+    }
+    span
+    {
+        font-family: 'inter';
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    .icons-image
+    {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    }

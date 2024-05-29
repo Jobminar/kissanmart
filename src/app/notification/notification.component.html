@@ -1,0 +1,22 @@
+<div class="container"> 
+    <div class="header">
+        <div class="tittle-container">
+            <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+            </div>
+            
+            <div>  <h2 id="tittle"> Notification</h2></div>
+        </div>
+        <div class="tittle-container">
+            <a (click)="clearMessage()" class="btn">clear all</a>
+        </div>
+    </div>
+    <div *ngFor="let notification of notifications">
+        <div class="notification-div">
+            <p class="notification">{{ notification}}</p>
+         </div>
+    </div>
+    <!-- <div>
+        <h2>Received Message:</h2>
+        <p>{{ successMessage }}</p>
+    </div> -->
+</div>

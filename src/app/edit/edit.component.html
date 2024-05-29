@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="tittle-container">
+        <div id="a"><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        
+        <div>  <h2 id="tittles">Edit</h2></div>
+    </div>
+    <div>
+        <form  #myForm="ngForm" (ngSubmit)="submitForm()">
+            <input type="text" placeholder="title" id="title" name="title" [(ngModel)]="formData.title" required>
+            <input type="text" placeholder="House_no" id="House_no" name="House_no" [(ngModel)]="formData.House_no" required>
+            <!-- <input type="text" placeholder="block" id="block" name="block" [(ngModel)]="formData.block" required> -->
+            <!-- <input type="text" placeholder="appartment" id="appartment" name="appartment" [(ngModel)]="formData.appartment" required> -->
+            <input type="text" placeholder="address" id="address" name="address" [(ngModel)]="formData.address" required>
+            <input type="text" placeholder="city" id="city" name="city"  [(ngModel)]="formData.city" required>
+            <input type="text" placeholder="state" id="state" name="state"  [(ngModel)]="formData.state" required>
+            <input type="text" placeholder="country" id="country" name="country"  [(ngModel)]="formData.country" required>
+            <input type="text" placeholder="pincode" id="pincode" name="pincode"  [(ngModel)]="formData.pincode" required>
+            <button type="submit" (click)="sharingAddress()">Add</button>
+        </form>
+    </div>
+    <!-- <div *ngFor="let i of AddressStored">
+        {{i.city}}
+    </div> -->
+  </div>
+

@@ -1,0 +1,132 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+    {
+        margin: 1rem;
+    }
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+    ;
+    }
+    #tittle
+    {
+        font-family: 'inter';
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.313rem;
+       margin-top: 0.2rem;
+        margin-left: 0.5rem;
+    }
+    .countTittle
+    {
+      
+      font-family: 'inter';
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+    .main-item
+    {
+        width:100%;
+        box-shadow: 0 0 0rem 0.03rem #00000040;
+        border-radius: 0.25rem;
+    }
+    .container-items
+    {
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    .img-name
+    {
+      margin: 1rem;
+      display: grid;
+      row-gap: 0.2rem;
+    }
+    .img
+    {
+      padding: 0;
+      margin: 0;
+    }
+    .img-name span{
+      padding: 0;
+     margin-left: 0.3rem;
+      margin-top: 0rem;
+    }
+    .img img
+    {
+      width: 3.438rem;
+      height: 2.75rem;
+      border: 1px solid #D9D9D9;
+      border-radius: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+    .price-kgs
+    {
+      margin: 2rem;
+    }
+    .text-dex
+    {
+      font-family: 'inter';
+      font-size: 1rem;
+      font-size: 500;
+      line-height: 1.25rem;
+    }
+    hr
+    {
+      width: 90%;
+      margin-top:  0;
+    }
+    .bill-container
+    {
+        width: 90%;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        display: grid;
+        border: 0.625rem;
+       
+        
+        box-shadow: 0 0 0rem 0.03rem #00000040;
+    }
+    
+    .mrp {
+        display: flex;
+        justify-content: space-between;
+    }
+    .horizontal-line {
+        border-top: 1px solid #ccc;
+        margin: 10px 0; /* Adjust margin as needed */
+      }
+    .delivery-charge
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    .address-section
+    {
+      border: 1px solid #B6B6B6;
+      box-shadow: 0 0 0rem 0.03rem #00000040;
+    }
+    .addresss
+    {
+        display: flex;
+        justify-content: space-around;
+        margin: 1rem;
+    }
+    .address-sub
+    {
+      margin: 0.5rem;
+    }
+    .removeBtn
+    {
+      background-color: #FF2400;
+      color: #B6B6B6;
+      margin-top: 2rem;
+      height: fit-content;
+      border: 0;
+      border-radius: 0.25rem;
+    }
+    
+    }

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="tittle-container">
+        <div id="a"><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        
+        <div>  <h2 id="tittles">Edit Profile</h2></div>
+    </div>
+    <div>
+        <form #myForm="ngForm" (ngSubmit)="submit()">
+            <input type="text" placeholder="phoneNumber" id="phoneNumber" name="phoneNumber" [(ngModel)]="formData.phoneNumber">
+            <input type="email" placeholder="email" id="email" name="email" [(ngModel)]="formData.email"><br>
+           
+        </form>
+    </div>
+    <div class="submit-btn"> <button type="submit" class="button">Submit</button></div>
+</div>

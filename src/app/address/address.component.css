@@ -1,0 +1,123 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container{
+        margin: 1rem;
+    }
+        .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+    }
+     .a
+    {
+        margin-top: 0.2rem;
+       
+    }
+    
+    #tittle
+    {
+      font-family: 'inter';  
+      font-weight: 500;
+      font-size: 1.3rem;
+       margin-top: 0.3rem;
+     margin-left: 0.25rem;
+    }
+    .tittle-container i
+    {
+        width: 2.313rem;
+        height: 2.313rem;
+        border-radius: 50%;
+        background-color: #00853E;
+        color: aliceblue;
+        text-align: center;
+        margin-top: 0px;
+    }
+    .icon-container
+    {
+        background-color: #00853E;
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 50%;
+        margin-left: 0.2.5rem;
+    }
+    #icon
+    {
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-top: 0.29rem;
+        margin-left: 0.25rem;
+    }
+    
+    .add-main
+    {
+        border: 0.01rem solid  #B6B6B6;
+        width: 24 rem;
+        height: max-content;
+        border-radius: 0.25rem;
+       display: flex;
+       justify-content: space-between;
+       padding: 0.5rem;
+    }
+    .Edit i{
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+    .edit-ion
+    {
+        width: 1rem;
+        height: 1rem;
+       
+    }
+    .edit-link {
+        color: #959494;
+        text-decoration: none;
+        display: flex;
+    }
+    #delete
+    {
+        color: #959494;
+        text-decoration: none;
+    }
+    .Address-tittle
+    {
+        margin-top: 0;
+        font-family: 'inter';
+        font-weight: 600;
+        font-size: 0.9rem;
+        line-height: 1rem;
+        display: flex;
+       
+    }
+    .title-identity
+    {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+       border: 0.01rem solid black;
+        /* background-color: #00853E; */
+        margin-right: 0.5rem;
+    }
+    .address-button button
+    {
+        width: 85%;
+        height: 1.938rem;
+        background-color: #00853E;
+        color: aliceblue;
+        border-radius: 1.313rem;
+        border: 0;
+        margin-left: 4%;
+        position: fixed;
+        top: 90%;
+    }
+    .home-bg {
+        background-color: green;
+    }
+    
+    .office-bg {
+        background-color: red;
+    }
+    
+    .others-bg {
+        background-color: orange;
+    }
+    
+    }

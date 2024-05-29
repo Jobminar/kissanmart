@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="tittle-container">
+        <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        <div class="logo-div"><img src="assets\profile\iconamoon_profile.png" id="logo">
+        </div>
+        <div>  <p id="tittle">{{name}}</p></div>
+    </div>
+    <div class="details-section">
+        <div><i class="fa fa-phone">&nbsp;<span> Ph.no : </span>&nbsp;</i>&nbsp;</div>
+        <div class="num">     
+            <div>{{phoneNo}}</div>&nbsp;
+            <!-- <div class="Edit">
+                <a  class="edit-link" (click)="edit()"><img src="assets\profile\8666681_edit_icon.png" class="edit-ion">&nbsp;Edit</a>
+            </div> -->
+        </div>
+    </div>
+    <hr>
+    <div class="details-section">
+        <div><i class="fa fa-envelope">&nbsp;<span>Mail ID :</span> &nbsp;</i></div>
+        <div class="num">
+            <div class="mail">{{email}}</div> &nbsp;   
+            <div class="Edit">
+                <a class="edit-link" (click)="edit()"><img src="assets\profile\8666681_edit_icon.png" class="edit-ion">&nbsp;Edit</a>
+            </div>
+        </div>
+    </div>
+    <div style="height: 5rem;"></div>
+    <div *ngFor="let slide of Slides">
+        <div class="slide">
+            <div> <button type="button" (click)="navTo(slide)"><span>{{slide.title}}</span></button></div>
+            <div> <img [src]="slide.src" class="icons-image"></div>
+        </div>
+        
+        <hr>
+        <br>
+        </div>
+</div>

@@ -1,0 +1,107 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+    {
+        margin: 1rem;
+    }
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+        
+      
+    }
+    #tittle
+    {
+        font-family: 'inter';
+        font-size: 1.4rem;
+        font-weight: 500;
+       margin-top: 0rem;
+      margin-left: 0.313rem;
+    }
+    .logo-div
+    {
+        width: 2.313rem;
+        height: 2.313rem;
+        border-radius: 50%;
+        background-color: #00853E;
+        color: aliceblue;
+        text-align: center;
+        margin-top: -0.25rem;
+    }
+    #logo
+    {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 0rem;
+        margin-top: 0.3rem;
+     
+    }
+    #tittle2
+    {
+        font-family: inter;
+        font-weight: 500;
+        margin-left: 1.1rem;
+        size: 1.1rem;
+    }
+    .sub-container
+    {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem;
+        
+        margin-bottom: 0;
+        padding: 0;
+    }
+    hr{
+        margin-top: 0;
+    }
+    .sub-container p{
+        font-family: 'inter';
+        font-size: 600;
+        font-size: 1.1rem;
+    }
+    .details
+    {
+        border: 0.01rem solid  #B6B6B6;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .icons{
+        width: 0.813rem;
+        height: 0.813rem;
+       
+    }
+    .sub-container span
+    {
+        color: #5a5454;
+       
+    }
+    .sub-container-image
+    {
+        width: 3.2rem;
+        height: 2.8rem;
+       
+    }
+    .sub-container-image img{
+        height: 100%;
+        width: 100%;
+    }
+    #pays
+    {
+       
+        margin: 0;
+        margin-left: 1rem;
+    }
+    .button
+    {
+        background-color: #00853E;
+        border-radius: 1rem;
+        color:rgb(243, 237, 237);
+        border: 0;
+        width: 10rem;
+        height:2rem ;
+        padding: 0.2rem;
+        margin-bottom: 0.5rem;
+        margin-left: 1rem;
+    }
+    }

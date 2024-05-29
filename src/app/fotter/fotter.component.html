@@ -1,0 +1,31 @@
+<div class="main-container">
+    <div class="buttons-container">
+        <div><button (click)="navToHome()"><i class="material-icons" >home</i></button></div>
+        <div><span>Home</span></div>
+    </div>&nbsp;&nbsp;
+    <div class="buttons-container">
+        <div><button (click)="navToProfile()"> <i class="material-icons">account_circle</i></button></div>
+        <div><span>Profile</span></div>
+    </div>&nbsp;&nbsp;
+    <div class="buttons-container">
+        <div><button (click)="navToOrders()"><i class="material-icons">menu</i></button></div>
+        <div><span>Orders</span></div>
+    </div>&nbsp;&nbsp;
+    <div class="buttons-container">
+        <div><button (click)="navtoNotification()"><i class="material-icons">
+            payment
+        </i></button></div>
+        <div><span>Policy</span></div>
+    </div>
+    
+    <div class="buttons-container" >
+        <div class="cart"><button (click)="navToCart()" class="items" ><i class="material-icons">shopping_cart</i></button></div>
+        <div class="myCart"><span>MyCart</span></div>
+    </div>
+    <span class="numb" *ngIf="itemsInCart>0" ><span id="sp">{{itemsInCart}}</span></span>
+   
+</div>  
+<br>
+
+<!-- <app-my-cart #myCart></app-my-cart> -->
+

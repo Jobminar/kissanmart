@@ -1,0 +1,55 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+{
+    margin: 1rem;
+}
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+    }
+    #a
+    {
+        margin-top: 0.4rem;
+    }
+    #tittles
+    {
+        font-family: 'inter';  
+      font-weight: 500;
+      font-size: 1.3rem;
+       margin-top: 0.3rem;
+     margin-left: 0.25rem;
+    }
+    form
+{
+    display: grid;
+    grid-gap: 1rem;
+    width: 90%;
+}
+form input
+{
+    height: 2rem;
+    border: 0.1rem solid 
+    #D9D9D9;
+}
+.submit-btn
+{
+    position: fixed;
+    top:95%;
+    width:90% ;
+    height: 1.5rem;
+    background-color:#00853E;
+    border-radius: 0.6rem;
+    border: 1px solid #D9D9D9;
+    justify-content: center;
+    text-align: center;
+}
+.button{
+    width:90% ;
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+    border:0;
+    margin-top: 0.2rem;
+}
+}

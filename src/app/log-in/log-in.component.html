@@ -1,0 +1,52 @@
+<div class="arrow"><a (click)="goToPreviousPage()" ><img src="assets\solar_arrow-up-linear.png"></a>
+</div>
+<div class="container">
+    <div class="container1">
+      <div class="content">
+        <div><strong id="tittle">KISSAN MART</strong></div>
+        <div id="logo"> <img src="assets\home\kissanmart2 re.png" class="log-img"></div>
+        <div><span id="title2">Enter your Phone Number</span><br></div>
+      </div>
+      <div class="input-continer">
+        <form [formGroup]="loginForm" (ngSubmit)="details()">
+          <div class="logIn-div">
+            <fieldset class="line">
+              <legend>Phone no</legend>
+              <div class="number-input"> 
+                <div><p>+91</p></div>&nbsp;
+                <div>
+                  <!-- Use form control from FormGroup -->
+                  <input type="number" pattern=".{10,10}" title="please enter valid mobile number"
+                    id="phoneno" name="phoneno" formControlName="phoneno" class="input-box1" >
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="second">
+              <legend>Password</legend>
+              <!-- Use form control from FormGroup -->
+              <input type="password" name="password" id="password" formControlName="password" required class="input-box1">
+              <label  id="show-password-checkbox" (click)="togglePasswordVisibility($event)">{{showPassword}}</label>
+              <!-- <i class="fa fa-eye" id="show-password-checkbox" (click)="togglePasswordVisibility($event)"></i> -->
+              
+            </fieldset>
+            
+          </div>
+         
+          <button type="submit" class="submit-button">Log In</button>
+        </form>
+        <div class="signUp-link"><span>Don't have an account?</span><a  (click)="navToProfile()" class="sign-link"> signup</a></div>
+        <div class="signUp-link"><a class="sign-link" (click)="navToForgot()">forgot password?</a></div>
+        <div *ngIf="isLoading" class="loading-spinner">Loading...</div>
+        <ng-container *ngIf=status;>
+          <div>
+            <p style="color: red;">*phone no or password is invalid</p>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="last"><img src="assets\home\Ellipse 8 (1).png"></div>
+  </div>
+  <div class="loadings" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+

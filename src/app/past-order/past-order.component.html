@@ -1,0 +1,43 @@
+
+<div class="container">  
+    <div class="tittle-container">
+        <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        <div class="logo-div"><img src="assets\profile\past2.png" id="logo">
+        </div>
+        <div>  <p id="tittle">Past order</p></div>
+    </div>
+    <!-- <div><p id="tittle2">Completed Refunds</p></div> -->
+    
+    <div *ngFor="let refund of pastOrders">
+        <div class="details">
+            <div class="sub-container">
+                <div class="sub-container-image">
+                    <img [src]="refund.itemImage">
+                    <div>{{refund.itemName}}</div>
+                </div>
+                <div><p>{{refund.count}}kg </p></div>
+                <div>
+                    <div >
+                        <p style="color:#09C43D">{{refund.orderStatus}} &nbsp;<img src="assets\my-cart\right.jpg" class="icons">&nbsp;</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <br>
+            <div class="sub-container">
+                <div>
+                    <span>Delivery to:<strong>&nbsp;{{type}}</strong></span><br>
+                    <span>Completed on:{{refund.currentDate| date:'shortDate'}}</span>
+                </div>
+                <div><h4>Rs.{{refund.price}}&nbsp;</h4></div>
+            </div>
+            <!-- <hr>
+            <div>
+                <button type="button" class="button" (click)="order(refund)">Repeat order</button>
+            </div> -->
+        </div>
+    </div>
+ </div>
+
+

@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="tittle-container">
+        <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        <div id="vegetables-logo-div"><img src="assets\categories\Group 45.png" id="vegetables-logo">
+        </div>
+          <div>  <h2 id="tittle"> Fresh Fruits</h2></div>
+    </div>
+    <div>
+        <div id="scearch">
+         <form>
+             <input type="text" [(ngModel)]="searchTerm" name="searchTerm" id="scearch-input" (input)="searchProducts()">
+             <img src="assets\cil_search.png" id="scearch-logo" (click)="searchProducts()">
+         </form>
+      </div>
+    </div>
+    <div style="width: 100px;height: 3.75rem;">
+
+    </div>
+    <div id="main-frame">
+        <div class="wrapper">
+                <div *ngFor="let category of categories" class="image-container">
+                    <div class="image-name"  *ngIf="category.category === 'freshFruits'"> 
+                        <div [ngSwitch]="category.category">  
+                            <div *ngSwitchCase="'freshFruits'"> 
+                              <div class="image-name"> <img src="assets\categories\Group 45.png" [alt]="category.alt" (click)="navigateTo(category)" class="category-image">
+                              <span>{{category.category}}</span></div>
+                            </div>
+                        </div>
+                        
+                    </div>   
+                </div>
+        </div>
+        <div class="items-continer">
+            
+          <div *ngFor="let product of productItems" >
+            <div class="every-items">  
+                <img [src]="product.src" [alt]="product.alt">
+                <div class="name-product">{{product.itemname}}</div>
+               <div class="price-containers"> 
+                <div class="price-tag">&#8377;{{  product.costPerUnit*product.count }}</div>
+                <div class="button-container">
+                  <button type="submit" (click)="decreaseCount(product)">-</button>
+                  <ng-container *ngIf=" product.count <= 5; else elseBlock">
+                    <span>{{ product.count }}kg</span>
+                  </ng-container>
+                  <ng-template #elseBlock>
+                    <div class="alert-container" *ngIf="showAlert">
+                        <div class="alert-box">
+                          <p>For orders bryond 5kgs</p>
+                          <p>Please contact our store</p>
+                          <div class="alert-button">
+                              <button (click)="hideAlert(product)">CALL</button>
+                              <button (click)="hideAlert(product)">OK</button>
+                        </div>
+                        </div>
+                      </div>
+                  </ng-template>
+                  <button type="submit" (click)="increaseCount(product)" id="plusButton">+</button>
+                </div>
+              </div>
+                <button type="submit" (click)="changeColor(product)" [style.background]="product.button.buttonColor" (click)="addingItems(product)" (click)="share()" class="add-button">{{product.button.buttonText}}</button>
+             
+            </div>
+          </div>
+           
+            
+ 
+  </div>   
+              
+  <div *ngIf=logInStatus class="alert-logIn">
+    <span>need to log in first</span>
+    <button type="submit">ok</button>
+  </div>
+    
+   
+</div>
+<app-fotter #fotter></app-fotter>
+
+<div class="loadings" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+

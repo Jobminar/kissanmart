@@ -1,0 +1,48 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+    {
+        margin: 1rem;
+    }
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+    ;
+    }
+    #tittle
+    {
+        font-family: 'inter';
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.313rem;
+       margin-top: 0.2rem;
+        margin-left: 0.5rem;
+    }
+    .Kissan-tittle
+    {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .sub-title
+    {
+        font-size: 17px;
+        font-weight: 600;
+        font-family: 'roboto';
+       
+    }
+    span{
+        font-size: 17px;
+        font-weight: 600;
+        font-family: 'roboto';
+    }
+    .policy
+    {
+        /* background-color:orange; */
+        height: 1.5rem;
+        width: 90%;
+        border-radius: 0.4rem;
+        text-align: center;
+        margin-top: 1rem;
+    
+    }
+}

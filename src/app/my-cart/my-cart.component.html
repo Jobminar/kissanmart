@@ -1,0 +1,110 @@
+<div class="container">
+    
+    <div class="tittle-container">
+        <div class="arrow"><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        </div>
+        <div id="img-container"><img src="assets\my-cart\Group 39.png" id="vegetables-logo">
+        </div>
+        <div>  <h2 id="tittle"> My Cart</h2></div>
+    </div>
+    <br>
+    <h1 class="countTittle" >No of Items-{{sharedArray.length}}</h1>
+    <div class="main-item" >
+            
+                <div *ngFor="let item of sharedArray ">
+                
+                    <div class="container-items">
+                    <div class="img-name" > 
+                            <div class="img" ><img [src]="item.itemImage
+                                "></div>
+                            <div id="name" class="text-dex"><span>{{item.itemname}}</span></div>
+                    </div>
+                    
+                  
+                            <div class="price-kgs" >
+                                <span class="text-dex">{{ item.count }}kg</span>
+                            </div>
+                            <div ><button type="button" class="removeBtn"(click)="removeFruits(item)">remove</button></div>
+                            <div class="price-kgs">
+                            <span  class="text-dex">&#8377;{{item.costPerUnit * item.count}}</span>
+                            </div>
+                        
+                    </div>
+                <hr>
+            
+        </div>
+           
+    </div>
+    <h1 class="countTittle" >Bill details</h1>
+    <div class="bill-container">
+        <div class="mrp">
+            <p>MRP</p>
+            <P>&#8377;{{total}}</P>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="delivery-charge">
+            <p>delivery charge</p>
+            <p>&#8377;{{delivaryCharges}}</p>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="delivery-charge">
+            <p>Handling Charges</p>
+            <p>&#8377;{{handlingCharges}}</p>
+        </div>
+        <div class="horizontal-line"></div>
+        <div class="delivery-charge">
+            <p>Total</p>
+            <span *ngIf="total>0; else ElseBlocktotal"><p>&#8377;{{grandTotal}}</p></span>
+            <ng-template #ElseBlocktotal><p>&#8377;0</p></ng-template>
+        </div>
+    </div>
+
+    <br>
+    <h1 class="countTittle" >Delivery address</h1>
+    <div class="address-section">
+        <div class="address-sub">
+            <!-- Displaying the contents of the address object using keyvalue pipe -->
+            
+            <div>
+                <div *ngFor="let item of address | keyvalue">
+                    <ng-container *ngIf="item.key==='Type'">
+                        <h4 class="Address-tittle"><div class="title-identity"></div>{{item.value}}</h4></ng-container>
+                </div>
+                <div *ngFor="let item of address | keyvalue">
+                    
+                    <ng-container *ngIf="!excludedKeys.includes(item.key)">
+                        <span>{{ item.value }}</span>
+                    </ng-container>
+                    <ng-container *ngIf="item.key==='country'">
+                       <span> {{item.value}}</span></ng-container>
+                </div>
+            </div>
+          </div>
+     
+        <div class="addresss">
+            <button (click)="selectAddress()" class="selectAddress-btn">select address</button>
+            <button (click)="addNewAdd()" class="addNew-btn">add new</button>
+        </div>
+    </div>
+    <div *ngIf="showWarning" class="warning-message" style="color:red">***Please select an address</div>
+    <!-- <h2 class="countTittle">Select Payment Method</h2>  -->
+    <div class="Payment-main">
+        <div >
+            <!-- <button (click)="selectPayment()" class="pay-button" (click)="SendingCartToOrder()">Proced To Pay</button> -->
+            <button class="pay-button" (click)="initiatePayment()">Proced To Pay : {{grandTotal}}</button>
+           
+        </div>
+
+        <div class="payment-container" *ngFor="let pay of  payments">
+            <div class="sub-contianer">
+                <div class="sorce">
+                    <div id="img"><img [src]="pay.src"></div>
+                    <div><p>{{pay.tittle}}</p></div>
+                </div>
+                <div id="change"><button (click)="selectChange()" class="pay-button">change</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

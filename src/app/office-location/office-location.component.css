@@ -1,0 +1,57 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+    {
+        margin: 1rem;
+    }
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+    }
+    #tittle
+    {
+        font-family: 'inter';
+       margin-top: 0.2rem;
+      margin-left: 0.313rem;
+    }
+    .logo-div
+    {
+        width: 2.313rem;
+        height: 2.313rem;
+        border-radius: 50%;
+        background-color: #00853E;
+        color: aliceblue;
+        text-align: center;
+        margin-top: -0.25rem;
+    }
+    #logo
+    {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 0rem;
+        margin-top: 0.2rem;
+        
+    }
+    
+    .address
+    {
+        display: flex;
+        margin-top: 3rem;
+    }
+    .address img
+    {
+        margin-top: 1rem;
+        margin-left: 0.5 rem;
+        padding-right: 1rem;
+    }
+    .container-map
+    {
+        width: 100%;
+        border-radius: 4px;
+    }
+    .map-main
+    {
+        height:"400px";
+        width:"100%";
+    }
+    }

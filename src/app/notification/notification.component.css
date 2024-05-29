@@ -1,0 +1,43 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .container
+    {
+        margin: 1rem;
+    }
+    .header
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn
+    {
+        color: rgba(30, 30, 236, 0.655);
+        font-size: 1rem;
+    }
+    .tittle-container
+    {
+        margin-top: 2rem;
+        display: flex;
+    ;
+    }
+    #tittle
+    {
+        font-family: 'inter';
+        font-weight: 600;
+        font-size: 1.3rem;
+        line-height: 1.313rem;
+       margin-top: 0.2rem;
+        margin-left: 0.5rem;
+    }
+    .notification
+    {
+        font-size: 1.1rem;
+        font-family: 'inter';
+        font-weight: 400;
+    }
+    .notification-div
+    {
+        
+        padding: 0.5rem;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+    }
+    }

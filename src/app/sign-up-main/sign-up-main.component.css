@@ -1,0 +1,149 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+.arrow
+{
+    position: fixed;
+    background: transparent;
+    top:1rem;
+    left: 1rem;
+}
+.container {
+    height: 100vh;
+    padding-top: 20vh;
+    padding-bottom: 0;
+    margin: 0;
+    background: radial-gradient(circle at 100% 0, #b1f0ce 0%, 
+    #E8F4EE 25%,
+    #E8F4EE 100%);
+}
+
+.content {
+    text-align: center;
+    display: grid;
+    row-gap: 0;
+}
+
+#tittle {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 200%;
+    color: black;
+}
+
+#title2 {
+    font-family: inter;
+    font-weight: 600;
+    font-size: 120%;
+    color: black;
+}
+#logo
+{
+    width: 4.5rem;
+    height: 4.5rem;
+    position: relative;
+    left: 40%;
+}
+.logo-img
+{
+    width: 100%;
+    height: 100%;
+    
+}
+#verification-text {
+    font-family: inter;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: #B6B6B6;
+}
+
+fieldset {
+    width: 90%;
+    height: 3rem;
+    border: 0.01rem solid #070707;
+    border-radius: 0.6rem;
+    
+    display: flex;
+    background-color: white;
+    
+}
+.line
+{
+    margin-top: 0.5rem;
+    background-image: linear-gradient(to right, transparent 40px,#B6B6B6 40px,#B6B6B6 41px, transparent 41px, transparent 100%);
+
+}
+legend {
+    height: 0.8rem;
+    color: black;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 0.7rem;
+    /* margin-top: -1rem; */
+    margin-bottom: 0px; /* Add some margin at the bottom of the legend */
+      display: block;
+    
+}
+
+.input-box {
+    width: 140%;
+    border: 0;
+    background-color:white;
+    height: 1.5rem;
+}
+.number-input
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.number-input p{
+    color: #928D8D;;
+}
+.second
+{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.submit-button {
+    margin-left: 6rem;
+    width: 10.063rem;
+    height: 2.625rem;
+    background-color: #00853E;
+    color: #FFFFFF;
+    border-radius: 1.813rem;
+    border-color: white;
+    font-family: 'inter';
+    font-weight: 600;
+    font-size: 1.125REM;
+    border: 1px solid red;
+}
+
+.input-continer {
+    display: grid;
+    margin-left: 1rem;
+}
+.last
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: blue;
+  }
+input:focus {
+    border-color: green;
+  }

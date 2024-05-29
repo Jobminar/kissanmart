@@ -1,0 +1,58 @@
+.container
+{
+    margin: 1rem;
+}
+.tittle-container
+{
+    margin-top: 2rem;
+    display: flex;
+}
+ #a
+{
+    margin-top: 0.4rem;
+}
+#tittles
+{
+    font-family: 'inter';  
+  font-weight: 500;
+  font-size: 1.3rem;
+   margin-top: 0.3rem;
+ margin-left: 0.25rem;
+}
+form
+{
+    display: grid;
+    grid-gap: 1rem;
+    width: 90%;
+}
+form input
+{
+    height: 2rem;
+    border: 0.1rem solid 
+    #D9D9D9;
+}
+.Zones
+{
+    height: 2rem;
+    border: 0.1rem solid 
+    #D9D9D9;
+    font-family: 'inter';
+    color: #201f1f;
+}
+#zone-label
+{
+    padding-top: 5px;
+    justify-content: center;
+    color: #201f1f;
+}
+.loadings
+{
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    width: 150px;
+    height: 150px;
+    /* background-color: #d6d5d5; */
+    /* align-items: center; */
+    text-align: center;
+}

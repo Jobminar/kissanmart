@@ -182,7 +182,7 @@ export class SignUpMainComponent {
         if (error.error.error=="phoneNumber is already registered") {
          
           // Swal.fire("error","user already exits with this phone number","error")
-          alert("user already exits with this phone number")
+          alert("user already exits with this phone number please log in")
         }
       }
     );

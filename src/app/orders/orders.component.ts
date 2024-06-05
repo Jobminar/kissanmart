@@ -59,13 +59,20 @@ export class OrdersComponent implements OnInit{
     }, 1000);
   }
 
+  showContainer:any;
+ 
   gettingItems() {
     this.orderService.fetchData().subscribe(
       (response) => {
        
         this.orderService.formatData(response);
         this.orders = response.filter((order: { orderStatus: string; }) => order.orderStatus === 'Pending');
-
+       console.log(this.orders.length);
+        if (this.orders.length<=0) {
+          this.showContainer=false
+        } else {
+          this.showContainer=true
+        }
         this.orders.forEach(element => {
         this.addressId = element.addressId;
         const orderTime = new Date(element.currentDate).getTime();

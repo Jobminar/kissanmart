@@ -27,7 +27,7 @@ body, html {
 .content {
     text-align: center;
     display: grid;
-    row-gap: 0;
+    row-gap: 0.8rem;
 }
 
 #tittle {
@@ -69,7 +69,7 @@ body, html {
 }
 .logIn-div
 {
-    width: 90%;
+    width: 100%;
 }
 fieldset {
     width: 100%;
@@ -94,14 +94,16 @@ legend {
     margin-bottom: 1px;
 }
 p{
-    margin-top: 7px;
+    margin-top: 9px;
+    font-size: 1rem;
 }
 .input-box1 {
-    width: 140%;
+    width: 100%;
 
     background-color:white;
     height: 1.5rem;
-    border: none
+    border: none;
+    font-size: 1rem;
 }
 .input-box1:focus,
 .input-box1:active {
@@ -119,7 +121,9 @@ p{
 
 }
 .number-input p{
-    color: #928D8D;
+    color:black;
+    /* margin-top: 0.5rem; */
+    font-size: 1rem;
 }
 .second
 {
@@ -127,8 +131,14 @@ p{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+.submit-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .submit-button {
-    margin-left: 6rem;
+    /* margin-left: 6rem; */
     width: 10.063rem;
     height: 2.625rem;
     background-color: #00853E;
@@ -142,7 +152,9 @@ p{
 
 .input-continer {
     display: grid;
-    margin-left: 1rem;
+    margin-left: 5%;
+    width: 90%;
+    /* border: 1px solid black; */
 }
 .last
 {
@@ -183,4 +195,7 @@ p{
 input{
     outline: 0;
     border-width: 0 0 2px;
+}
+input::placeholder{
+    color: #414141;
 }

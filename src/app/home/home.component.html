@@ -2,7 +2,7 @@
     <div class="header">
         <div id="logo-container">
             <div class="logo">
-            <img src="assets\home\kissanmart2 logo.png" class="logo-img">
+            <img src="assets/home/kissanmart2 logo.png" class="logo-img">
             </div>
             <div class="tittle"> <span class="tittle-text">KISSAN MART</span></div>  
         </div>
@@ -17,7 +17,7 @@
             <form >
                 <input type="text" [(ngModel)]="searchTerm" name="searchTerm" id="scearch-input"   
                   (click)="navToScearch()">
-                <img src="assets\cil_search.png" id="scearch-logo">
+                <img src="assets/cil_search.png" id="scearch-logo">
             </form>
             
          </div>
@@ -41,10 +41,10 @@
     <div class="category-container">
         <h1 style=" font-family: 'Inter';font-size: 1.375rem;">Shop by category</h1>
         <div class="category">
-            <div id="vegetables"><img src="assets\Rectangle 4.png" (click)="navgateToFreshVegetables()" class="cat-images" >
+            <div id="vegetables"><img src="assets/Rectangle 4.png" (click)="navgateToFreshVegetables()" class="cat-images" >
                 <p >Fresh vegetables</p>
             </div>
-            <div id="fruits"><img src="assets\Rectangle 5.png" (click)="navigateToDestination()" class="cat-images">
+            <div id="fruits"><img src="assets/Rectangle 5.png" (click)="navigateToDestination()" class="cat-images">
                 <p >Fresh fruits</p>
             </div>
         </div>
@@ -125,7 +125,7 @@
                     <div class="name-product">{{picks.itemname}}</div>
                     <div class="price-containers">
                         <div class="price">
-                          RS. <!--<del>120</del>&nbsp; --> 
+                            &#8377; <!--<del>120</del>&nbsp; --> 
                             <div>{{picks.costPerUnit*picks.count}}</div>
                         </div>
                     
@@ -135,16 +135,22 @@
                             <span>{{picks.count }}kg</span>
                             </ng-container>
                             <ng-template #elseBlock2>
-                            <div class="alert-container" *ngIf="showAlerts">
-                                <div class="alert-box">
-                                    <p>For orders bryond 5kgs</p>
-                                    <p>Please contact our store</p>
-                                    <div class="alert-button">
-                                        <button (click)="callToMart()">CALL NOW</button>
-                                        <button (click)="hideAlert(picks)">OK</button>
-                                </div>
-                                </div>
-                                </div>
+                            
+                                <div class="overlay-container" *ngIf="showAlerts">
+                                    <!-- Other content or layers -->
+                                    <div class="alert-container">
+                                      <div class="alert-box">
+                                        <p>For orders beyond 5kgs</p>
+                                        <p>Please contact our store</p>
+                                        <div class="alert-button">
+                                          <button (click)="callToMart()">CALL NOW</button>
+                                          <button (click)="hideAlert(picks)">OK</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                           
                             </ng-template>
                             <button type="submit" (click)="increaseCount(picks)" id="plusButton">+</button>
                         </div>
@@ -163,15 +169,13 @@
       </div>
 
 </div>
-<div style="height: 3.3rem;"></div>
+<div style="height: 5rem;"></div>
 <!-- <div ><img src="assets\fotter\Voice order.png"  class="voiccee" (click)="navToVoice()"/></div> -->
-<br>
-<br>
-<br>
+
 <app-fotter></app-fotter>
 <app-fotter #fotter></app-fotter>
 
 <div class="loadings" *ngIf="isLoading">
-    <!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
-    <mat-spinner></mat-spinner>
+    <mat-spinner ></mat-spinner>
 </div>
+

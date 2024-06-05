@@ -2,6 +2,7 @@
     .container
     {
         margin: 1rem;
+       
     }
     .tittle-container
     {
@@ -9,7 +10,7 @@
         display: flex;
     ;
     }
-    #tittle
+    #tittle, #tittle1
     {
         font-family: 'inter';
         font-weight: 600;
@@ -128,5 +129,26 @@
       border: 0;
       border-radius: 0.25rem;
     }
-    
+    .sec-container{
+      width: 99%;
+      height: 80vh;
+      border: 1px solid transparent;
+     
+      
+    }
+  
+    .sec-container img{
+      width: 20rem;
+      height: 20rem;
+    }
+    .empty-div{
+   
+      width: 100%;
+      height: 80%;
+      /* border: 1px solid red; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
     }

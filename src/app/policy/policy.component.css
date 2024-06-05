@@ -2,6 +2,7 @@
     .container
     {
         margin: 1rem;
+        width: 100%;
     }
     .tittle-container
     {
@@ -32,7 +33,7 @@
     }
     span{
         font-size: 17px;
-        font-weight: 600;
+        font-weight: 500;
         font-family: 'roboto';
     }
     .policy
@@ -44,5 +45,8 @@
         text-align: center;
         margin-top: 1rem;
     
+    }
+    pre{
+        font-weight: 500;
     }
 }

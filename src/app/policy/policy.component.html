@@ -1,9 +1,9 @@
 <div class="container"> 
     <div class="tittle-container">
-        <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        <div><a (click)="goToPreviousPage()"><img src="assets/solar_arrow-up-linear.png"></a>
         </div>
         
-        <div>  <h2 id="tittle">Policies</h2></div>
+        <div>  <span id="tittle">Policies</span></div>
     </div>
     <div>
       <div class="policy"> <span (click)="toggleSection('Shipment')">Shipping and Delivery </span></div>
@@ -20,23 +20,72 @@
       </div>
       
     </div>
-    <!-- <div>
-       <div class="policy"> <span (click)="toggleSection('privacy')">Privacy & Disclaimer policy</span></div>
-       <ul>
-       <p *ngIf="showPrivacy">
+    <div>
+       <div class="policy"> <span (click)="toggleSection('privacy')">Privacy policy</span></div>
+       <hr>
+       <div *ngIf="showPrivacy">
          
-         <li> Kisan Market always keeps customer privacy at highest level of priorities, we collect name, email id, mobile number, delivery address. 
-        </li>
-        <li>
-          We never share any of the above details to third parties, as we have inhouse delivery team.
-        </li>
-        <li>
-          We reach our offers to our customers via WhatsApp, SMS, email and phone calls, customers always reserve the right to unsubscribe to such messages by replying unsubscribe or stop.
-        </li>
-        
-       </p> 
-      </ul>
-    </div> -->
+          Welcome to Kisan Mart("we," "our," "us"). We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and share your information when you use our iOS app to order fresh vegetables delivered by our in-house delivery team.
+          <br>
+          <br>
+          <h2>Information: We Collect</h2>
+          <br>
+          We collect the following personal information from you:<br>
+          <span>Name</span> : To personalize your experience and ensure correct delivery.
+         <br> <span>Mobile Number</span> : For communication regarding your orders and delivery updates.
+         <br><span>Email Address</span> : For account creation, order confirmation, and promotional communications.
+         <br> <span>Password</span> : To secure your account.
+         <br> <span>Delivary address</span> : To deliver your ordered vegetables to the correct location.
+          <br><br>
+          <h2>How We Use Your Information</h2>
+          <br>
+          <span>We use the collected information for the following purposes:          </span>
+          <br><br>
+          <h2>Order Processing and Delivery</h2>  To process your orders and ensure timely delivery of fresh vegetables.
+          <br>
+          <span>Account Management</span> : To create and manage your account on our app.
+          <br>
+          <span>Communication </span> : To send you updates about your orders, promotional offers, and respond to your queries.
+          <br>
+          <span>Security </span> : To protect your account and ensure the security of our services.
+          <br>
+          <br>
+          <h2>How We Share Your Information</h2>
+          <br>
+          <span>We do not sell, trade, or otherwise transfer your personal information to outside parties except as described below:</span>
+          <br>
+           <span> In-House Delivery Team </span>: Your name, mobile number, and delivery address will be shared with our delivery team to facilitate the delivery of your orders.
+           <br> <span>Service Providers </span>: We may share your information with third-party service providers who assist us in operating our app, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.
+            <br>
+            <span>Data Security</span>
+            We implement a variety of security measures to maintain the safety of your personal information. Your account information is protected by a password for your privacy and security. We also use encryption and other technologies to secure your data during transmission and storage.
+          <br>
+          <br>
+          <h2>Your Rights</h2>
+          <h2>You have the right to</h2>
+
+          <span>Access:</span> Request a copy of the personal information we hold about you.
+          <span>Correction:</span> Request correction of any inaccurate or incomplete information.
+          <span>Deletion:</span> Request deletion of your personal information, subject to certain exceptions.
+          <span>Withdraw Consent:</span> Withdraw your consent to the processing of your information, where we rely on your consent.
+            To exercise any of these rights, please contact us at [Your Contact Information].
+          <br><br>
+          <h2>Changes to This Privacy Policy</h2>
+          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
+          
+        <h2>Contact Us</h2>
+        If you have any questions about this Privacy Policy, please contact us at: 
+        <br>
+        <span>Email:</span> {{email}}
+        <span>Phone:</span> +91 6301086714
+          By using our app, you consent to our Privacy Policy.This Privacy Policy was last updated on [01/06/2024].
+          Kisan Market 
+
+         
+         
+       </div> 
+      
+    </div>
     <div>
        <div class="policy"> <span (click)="toggleSection('cancellation')">Refund Policy</span></div>
         <hr>
@@ -82,7 +131,7 @@
       
       Your use of the website and/or purchase from us are governed by following Terms and Conditions:
       The content of the pages of this website is subject to change without notice.
-      Neither we nor any third parties provide any warranty or guarantee as to the accuracy,timeliness, performance, completeness or suitability of the information and materials foundor offered on this website for any particular purpose. You acknowledge that such informationand materials may contain inaccuracies or errors and we expressly exclude liability for anysuch inaccuracies or errors to the fullest extent permitted by law.
+      Neither we nor any third parties provide any warranty or guarantee as to the accuracy,timeliness, performance, completeness or suitability of the information and materials foundor offered on this website for any particular purpose. You acknowledge that such informationand materials may contain inaccuracies or errors and we exspanssly exclude liability for anysuch inaccuracies or errors to the fullest extent permitted by law.
       Your use of any information or materials on our website and/or product pages is entirely atyour own risk, for which we shall not be liable. It shall be your own responsibility to ensurethat any products, services or information available through our website and/or productpages meet your specifi c requirements.
       Our website contains material which is owned by or licensed to us. This material includes, butare not limited to, the design, layout, look, appearance and graphics. Reproduction isprohibited other than in accordance with the copyright notice, which forms part of theseterms and conditions.
       All trademarks reproduced in our website which are not the property of, or licensed to, theoperator are acknowledged on the website.
@@ -91,7 +140,7 @@
       From time to time our website may also include links to other websites. These links areprovided for your convenience to provide further information.
       You may not create a link to our website from another website or document without KISANMARKET's prior written consent.
       Any dispute arising out of use of our website and/or purchase with us and/or any engagementwith us is subject to the laws of India .
-      We, shall be under no liability whatsoever in respect of any loss or damage arising directly orindirectly out of the decline of authorization for any Transaction, on Account of theCardholder having exceeded the preset limit mutually agreed by us with our acquiring bankfrom time to time
+      We, shall be under no liability whatsoever in respect of any loss or damage arising directly orindirectly out of the decline of authorization for any Transaction, on Account of theCardholder having exceeded the spanset limit mutually agreed by us with our acquiring bankfrom time to time
       
     </p>
       </div>

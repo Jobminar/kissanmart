@@ -1,4 +1,4 @@
-<div class="arrow"><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+<div class="arrow"><a (click)="goToPreviousPage()"><img src="assets/solar_arrow-up-linear.png"></a>
 </div>
 <div class="container">
  
@@ -6,30 +6,31 @@
       
       <div class="content">
         <div><strong id="tittle">KISSAN MART</strong></div>
-        <div id="logo"> <img src="assets\home\kissanmart2 re.png" class="logo-img"> </div>
+        <div id="logo"> <img src="assets/home/kissanmart2 re.png" class="logo-img"> </div>
         <div><span id="title2">Sign Up</span><br></div>
       </div>
+      <br>
       <div class="input-continer">
         <form [formGroup]="loginForm" >
           <div>
             <fieldset >
-              <legend>User Name</legend>
+             
               <div class="number-input"> 
                 
                 <div>
                   <!-- Use form control from FormGroup -->
-                  <input type="text"  title="please enter valid mobile number"
+                  <input type="text" placeholder="Name"  title="please enter valid mobile number"
                     id="userName" name="userName" formControlName="userName" class="input-box">
                 </div>
               </div>
             </fieldset>
             <fieldset class="second">
-              <legend>Email</legend>
+             
               
-              <input type="email" name="email" id="email" formControlName="email" required class="input-box">
+              <input type="email" placeholder="Email" name="email" id="email" formControlName="email" required class="input-box">
             </fieldset>
             <fieldset class="line">
-              <legend>Phone no</legend>
+              
               <div class="number-input"> 
                 <div><p>+91</p></div>&nbsp;
                 <div>
@@ -40,26 +41,28 @@
               </div>
             </fieldset>
             <fieldset class="second">
-              <legend>Password</legend>
+              <!-- <legend>Password</legend> -->
               
-              <input type="password" name="password" id="password" formControlName="password" required class="input-box">
+              <input type="password" placeholder="Password" name="password" id="password" formControlName="password" required class="input-box">
               <!-- <input type="checkbox" id="show-password-checkbox" (click)="togglePasswordVisibility($event)"> -->
 
               <label for="show-password-checkbox" (click)="togglePasswordVisibility($event)">{{showText}}</label>
             </fieldset>
             <fieldset class="second">
-              <legend>Confirm Password</legend>
+              <!-- <legend>Confirm Password</legend> -->
               
-              <input type="password" name="Confirmpassword" id="Confirmpassword" formControlName="Confirmpassword" required class="input-box">
+              <input type="password" placeholder="Confirm Password" name="Confirmpassword" id="Confirmpassword" formControlName="Confirmpassword" required class="input-box">
               <!-- <input type="checkbox" id="show-password-checkbox" (click)="toggleConfirmPasswordVisibility($event)"> -->
 
               <label for="show-Confirmpassword-checkbox" (click)="toggleConfirmPasswordVisibility($event)">{{confirmText}}</label>
             </fieldset>
            
           </div>
-          
-          <button type="" class="submit-button" (click)="details()" (click)="check()">Sign Up</button>
-          <ng-container *ngIf="status;">
+          <br>
+          <div class="submit-div">
+            <button type="submit" class="submit-button" (click)="details()" (click)="check()">Sign Up</button>
+          </div>
+        <ng-container *ngIf="status;">
             <div>
               <p style="color: red;">*All fields are mandatory!</p>
             </div>
@@ -74,7 +77,7 @@
         </form>
       </div>
     </div>
-    <div class="last"><img src="assets\home\Ellipse 8 (1).png"></div>
+    <div class="last"><img src="assets/home/Ellipse 8 (1).png"></div>
   </div>
   
   <div class="loadings" *ngIf="isLoading">

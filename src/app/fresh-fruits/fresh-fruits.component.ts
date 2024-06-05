@@ -18,10 +18,14 @@ export class FreshFruitsComponent implements OnInit{
   isLoading:boolean=false;
   logInStatus:boolean=false;
   inventoryData: any;
+  scearch:boolean=false;
   goToPreviousPage(): void {
     this.location.back();
   }
+  startSearch(){
+    this.scearch = !this.scearch;
 
+  }
   ngOnInit(): void {
     // this.fotter.countingCart()
   }
@@ -170,6 +174,13 @@ export class FreshFruitsComponent implements OnInit{
      
     }
    
+  }
+  callToMart()
+  {
+    
+      const phoneNumber = '1234567890'; // Specify the phone number
+      window.location.href = `tel:${phoneNumber}`; // Use the tel: URI scheme to initiate a phone call
+    
   }
   hideLogInAlert()
   {

@@ -4,7 +4,7 @@ import { DataTransferService } from '../data-transfer.service';
 import { Location } from '@angular/common';
 import { FotterComponent } from '../fotter/fotter.component';
 import { VegetablesService } from '../vegetables.service';
-import { LoadingComponent } from '../loading/loading.component';
+// import { LoadingComponent } from '../loading/loading.component';
 
 @Component({
   selector: 'app-fresh-vegetables',
@@ -14,12 +14,18 @@ import { LoadingComponent } from '../loading/loading.component';
 export class FreshVegetablesComponent implements OnInit{
 
 
-  @ViewChild('loading')loading!:LoadingComponent
+  // @ViewChild('loading')loading!:LoadingComponent
   isLoading:boolean=false;
   logInStatus:boolean=false;
   inventoryData: any;
+  scearch:boolean=false;
+  default:any=[];
+  startSearch(){
+    this.scearch = !this.scearch;
+
+  }
   ngOnInit(): void {
- 
+    this.byDefultItems()
    this.isLoading=true;
     this.vegetablesService.fetchData().subscribe(data => {
     
@@ -42,7 +48,24 @@ export class FreshVegetablesComponent implements OnInit{
         this.vegetablesService.assigningToCat();
       }
     )
-    // this.fotter.countingCart()
+    // this.default()
+    // this.vegetablesService.categories.forEach(item=>console.log(item))
+  }
+    byDefultItems()
+  {
+    setTimeout(()=>{
+    console.log( this.vegetablesService.categories);
+    for (let index = 1; index < this.vegetablesService.categories.length; index++) {
+      const element = this.vegetablesService.categories[index];
+      
+     console.log("inside loop");
+    }
+    const freshVegetables = this.vegetablesService.categories.
+    filter(item => item.category=== 'freshVegetables');
+    console.log(freshVegetables);
+    console.log(freshVegetables[0].products);
+    this.productItems=freshVegetables[0].products
+  },1000)
   }
   constructor(private router: Router,
               private sharedDataService:DataTransferService,
@@ -59,7 +82,7 @@ export class FreshVegetablesComponent implements OnInit{
 term:any;
 categories=this.vegetablesService.categories
 
-productItems:any[]=this.vegetablesService.categories[0]?.products||[]
+productItems:any[]=[]
 navigateToFreshFruits(category:any) {
   this.productItems=category.products
 }
@@ -159,6 +182,13 @@ showAlert = true;
      
     }
    
+  }
+  callToMart()
+  {
+    
+      const phoneNumber = '1234567890'; // Specify the phone number
+      window.location.href = `tel:${phoneNumber}`; // Use the tel: URI scheme to initiate a phone call
+    
   }
   hideLogInAlert()
   {

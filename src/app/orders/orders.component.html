@@ -1,6 +1,7 @@
-<div class="container">     
+@if (orders.length>0) {
+<div class="container" >     
     <div class="tittle-container">
-              <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+              <div><a (click)="goToPreviousPage()"><img src="assets/solar_arrow-up-linear.png"></a>
               </div>
           
               <div>  <h2 id="tittle">Order Details</h2></div>
@@ -81,6 +82,22 @@
           </div>
     </div>
   </div> 
-  
-  
+}
+@else {
+  <div class="sec-container">
+    <div class="tittle-container">
+        <div class="img-div"><a (click)="goToPreviousPage()"><i class="material-icons" style="font-size: 28px;">arrow_back</i></a>
+        </div>
+    
+        <div>  <h2 id="tittle1">Order Details</h2></div>
+    </div>
+    <div class="empty-div">
+        <div>
+            <img src="assets/orders/emptyorders.jpeg"><br>
+            <span class="countTittle" >you don't have any orders yet!</span>
+        </div>
+    </div>
+    
+  </div>
+}
   

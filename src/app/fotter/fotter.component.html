@@ -1,3 +1,5 @@
+
+<div class="container">
 <div class="main-container">
     <div class="buttons-container">
         <div><button (click)="navToHome()"><i class="material-icons" >home</i></button></div>
@@ -22,10 +24,14 @@
         <div class="cart"><button (click)="navToCart()" class="items" ><i class="material-icons">shopping_cart</i></button></div>
         <div class="myCart"><span>MyCart</span></div>
     </div>
-    <span class="numb" *ngIf="itemsInCart>0" ><span id="sp">{{itemsInCart}}</span></span>
+    @if (itemsInCart>0) {
+        <span class="numb" >{{itemsInCart}}</span>
+    }
+    <!-- <span class="numb" *ngIf="itemsInCart>0" ><span id="sp">{{itemsInCart}}</span></span> -->
    
 </div>  
 <br>
-
+<br>
+</div>
 <!-- <app-my-cart #myCart></app-my-cart> -->
 

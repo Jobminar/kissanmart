@@ -254,4 +254,16 @@
         background-color: #00853E;
         margin-right: 0.5rem;
     }
+    #confetti-canvas
+    {
+      width: 90%;
+      padding: 2%;
+      position:fixed;
+      top: 38%;
+      /* left: 3%; */
+      /* transform: translate(-50%, -50%); */
+      /* background-color: #cbc8c8; */
+      /* padding: 10px; */
+      border-radius: 5px;
+    }
     }

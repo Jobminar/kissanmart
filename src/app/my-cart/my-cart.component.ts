@@ -1,4 +1,4 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component ,ElementRef,OnInit, ViewChild} from '@angular/core';
 import { Location } from '@angular/common';
 import { DataTransferService } from '../data-transfer.service';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { CartService } from '../cart.service';
 // import { Title } from '@angular/platform-browser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SssionStorageService } from '../sssion-storage.service';
-
+import confetti from 'canvas-confetti'
 declare var Razorpay: any;
 @Component({
   selector: 'app-my-cart',
@@ -15,6 +15,7 @@ declare var Razorpay: any;
   styleUrl: './my-cart.component.css'
 })
 export class MyCartComponent implements OnInit{
+
 
   goToPreviousPage(): void {
     this.location.back();
@@ -26,6 +27,7 @@ export class MyCartComponent implements OnInit{
    dummy:any[]=[]
    sharedArray:any=this.cartService.cartResponse;
    senduserId:any;
+
    ngOnInit(): void {
    this.senduserId=this.sharedDataService.userId
    const userToken = this.sessionStorage.userTocken
@@ -37,23 +39,19 @@ export class MyCartComponent implements OnInit{
   });
     this.cartService.fetchData(userId,userToken).subscribe(
       (response) => {
-       
         this.dummy = response;
         this.assignValue(response);
         this.cartService.formatData(response);
-
-        
       },
       (error) => {
        
       }
      
     );
-  
-   
-  this.address=this.sharedDataService.addressShared
-  
-
+    this.delivaryCharges=0;
+    this.handlingCharges=0;
+    this.address=this.sharedDataService.addressShared
+    this.defalutMrp()
   }
   userName:any=''
   userNumber:any=''
@@ -80,7 +78,7 @@ export class MyCartComponent implements OnInit{
         this.sharedArrayVegetable=this.sharedDataService.getSharedArrayVegetable();
         this.sharedArrayOffer=this.sharedDataService.getSharedArrayOffers();
         this .noOfCartItems=this.sharedDataService.totalItems
-      this. updateTotalPrice(); 
+      // this. updateTotalPrice(); 
 
 
       this.cartService.getCartData().subscribe((cartData) => {
@@ -89,9 +87,6 @@ export class MyCartComponent implements OnInit{
       });
      
       this.address=this.sharedDataService.addressShared;
-      
-     
-     
       this.assigingAddress(this.sharedDataService.addressShared)
       this.userId=this.sessionStorage.userId;
       this.userName=this.sessionStorage.userName
@@ -129,42 +124,50 @@ export class MyCartComponent implements OnInit{
   totalOffersPrice:number=0;
   defalutMrp()
  {
-  for (let index = 0; index < this.sharedArrayVegetable.length; index++) {
-       
-    this.total=this.total+this.sharedArrayVegetable[index].price
-      }
-
-  for (let index = 0; index < this.sharedArray.length; index++) {
-        this.total=this.total+this.sharedArray[index].price
-        
-      }
-  for (let index = 0; index < this.sharedArrayOffer.length; index++) {
-    
-    this.total=this.total+this.sharedArrayOffer[index].totalCost
-  }
+  this.totalFriuts = this.sharedArray.reduce(
+    (acc:any, item:any) => acc + this.calculateTotalPrice(item),
+    0
+  );
+  this.totalVegetables = this.sharedArrayVegetable.reduce(
+    (acc:any, item:any) => acc + this.calculateTotalPrice(item),
+    0
+  );
+  this.totalOffersPrice = this.sharedArrayOffer.reduce(
+    (acc:any, item:any) => acc + this.calculateTotalPrice(item),
+    0
+  );
+  this.total=this.totalFriuts+this.totalVegetables+this.totalOffersPrice
+  
   this.grandTotalPrice();
  }
+
  grandTotalPrice()
  {
- 
-  // this. grandTotal=(this.total);
+  setTimeout(() => {
+   
+  
+  console.log(this.total);
   if (this.total<=100) {
     this.cartService.getingCharges().subscribe((data:any)=>{
     
       this.delivaryCharges=data.deliveryCharges;
       this.handlingCharges=data.handlingCharges;
-     
+      console.log(this.delivaryCharges+this.total+this.handlingCharges);
+      
       this. grandTotal=(this.delivaryCharges+this.total+this.handlingCharges);
     })
+     
    
    
   } else {
     this.delivaryCharges=0;
     this.handlingCharges=0;
-    this. grandTotal=(this.total);
+    this. grandTotal=this.total+this.delivaryCharges+this.handlingCharges;
+    this.initializeConfetti();
   }
-  
+ 
   this.sharedDataService.grandTotalPrice(this.grandTotal);
+  }, 1000);
  }
   calculateTotalPrice(item: any): number {
     
@@ -191,6 +194,7 @@ export class MyCartComponent implements OnInit{
       0
     );
     this.total=this.totalFriuts+this.totalVegetables+this.totalOffersPrice
+    
     this.grandTotalPrice();
  
   } 
@@ -225,6 +229,7 @@ export class MyCartComponent implements OnInit{
     const index=this.sharedArray.indexOf(item)
     this.sharedArray.splice(index,1)
     this.updateTotalPrice();
+    this.grandTotalPrice()
   }
   set()
   {
@@ -447,5 +452,56 @@ export class MyCartComponent implements OnInit{
   //   });
   //   this.router.navigate(['orders'])
   // }
+  show=false
+  initializeConfetti() {
+    this.show=true
+    const canvas = document.getElementById('confetti-canvas') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d');
 
+      ctx!.fillStyle = '#b3d9ff'; // Light blue background
+
+  // Fill the entire canvas with the background color
+  ctx!.fillRect(0, 0, canvas.width, canvas.height);
+    confetti({
+      particleCount: 100,
+      angle: 90,
+      spread: 45,
+      startVelocity: 45,
+      decay: 0.9,
+    });
+
+    // Add personalized text
+    ctx!.font = 'bold 16px Arial';
+    ctx!.textAlign = 'center';
+    ctx!.textBaseline = 'middle';
+    ctx!.fillStyle = '#eb1c15';
+    ctx!.fillText('Congratulations!', canvas.width / 2, canvas.height / 2);
+    ctx!.fillText('You have saved the delivery!', canvas.width / 2.1, canvas.height / 2 + 30);
+
+    // Fade out the text
+    this.fadeOutText(ctx!, canvas);
+    this.show=false
+    console.log('Task completed!');
+  }
+
+  fadeOutText(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+    let opacity = 1.5;
+    const fadeSpeed = 0.004;
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = `rgba(255, 0, 0, ${opacity})`;
+      ctx.fillText('Congratulations!', canvas.width / 2, canvas.height / 2);
+      ctx.fillText('You have saved the delivery charges!', canvas.width / 2, canvas.height / 2 + 30);
+
+      opacity -= fadeSpeed;
+      if (opacity > 0) {
+        
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+    
+  }
 }

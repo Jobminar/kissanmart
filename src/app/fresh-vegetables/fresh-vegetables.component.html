@@ -1,37 +1,48 @@
 <div class="container">
-    <div class="tittle-container">
+    <!-- <div class="tittle-container">
+      <div class="sub-div-tittle">
         <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
         </div>
         <div><img src="assets\Rectangle 4.png" id="vegetables-logo">
         </div>
-          <div>  <h2 id="tittle"> Fresh vegetables</h2></div>
+        <div>  <h2 id="tittle"> Fresh vegetables</h2></div>
+      </div>
+      <div class="added-icon"> <img src="assets\cil_search.png"  (click)="startSearch()"></div>
+      </div> -->
+    <div class="tittle-container">
+        <div class="sub-div-tittle">
+          <div><a (click)="goToPreviousPage()"><img src="assets/solar_arrow-up-linear.png"></a>
+          </div>
+          <div id="vegetables-logo-div"><img src="assets/Rectangle 4.png" id="vegetables-logo">
+          </div>
+          <div>  <h2 id="tittle">  Fresh vegetables</h2></div>
+        </div>
+        <div class="added-icon"> <img src="assets/cil_search.png"  (click)="startSearch()"></div>
     </div>
-    <div>
+    <div *ngIf="scearch" id="search-div">
         <div id="scearch">
          <form>
              <input type="text" [(ngModel)]="searchTerm" name="searchTerm" id="scearch-input" (input)="filterProducts()" >
-             <img src="assets\cil_search.png" id="scearch-logo"#reloadButton (click)="filterProducts()">
+             <img src="assets/cil_search.png" id="scearch-logo"#reloadButton (click)="filterProducts()">
          </form>
       </div>
     </div>
-    <div style="width: 100px;height: 3.75rem;">
-
-    </div>
+    <!-- <div style="width: 100px;height: 3.75rem;"></div> -->
     <div id="main-frame">
             <div class="cat-main">
                 <div *ngFor="let category of categories" class="image-container">
                    <div class="image-name"  *ngIf="category.category === 'freshVegetables' || category.category === 'additionals' || category.category === 'leafyVegetables'"> 
                       <div [ngSwitch]="category.category">  
                         <div *ngSwitchCase="'freshVegetables'" class="name-image">    
-                            <div><img src="assets\categories\Rectangle 17.png" [alt]="category.alt" (click)="navigateToFreshFruits(category)" class="category-image"></div>
+                            <div><img src="assets/categories/Rectangle 17.png" [alt]="category.alt" (click)="navigateToFreshFruits(category)" class="category-image"></div>
                             <div><span class="cat-name">Fresh vegetables</span></div>
                         </div>
                         <div *ngSwitchCase="'additionals'" class="name-image">    
-                          <img src="assets\categories\Group 43.png" [alt]="category.alt" (click)="navigateToFreshFruits(category)" class="category-image">
+                          <img src="assets/categories/Group 43.png" [alt]="category.alt" (click)="navigateToFreshFruits(category)" class="category-image">
                           <span class="cat-name">Additionals</span>
                         </div>
                         <div *ngSwitchCase="'leafyVegetables'" class="name-image">    
-                          <img src="assets\categories\Group 45.png" [alt]="category.alt" (click)="navigateToFreshFruits(category)" class="category-image">
+                          <img src="assets/categories/Group 45.png" [alt]="category.alt" (click)="navigateToFreshFruits(category)" class="category-image">
                           <span class="cat-name">leafy vegetables</span>
                         </div>
                       </div>
@@ -52,16 +63,20 @@
                             <span>{{ product.count }}kg</span>
                           </ng-container>
                           <ng-template #elseBlock>
-                            <div class="alert-container" *ngIf="showAlert">
+                            <div class="overlay-container" *ngIf="showAlert">
+                              <!-- Other content or layers -->
+                              <div class="alert-container">
                                 <div class="alert-box">
-                                  <p>For orders bryond 5kgs</p>
+                                  <p>For orders beyond 5kgs</p>
                                   <p>Please contact our store</p>
                                   <div class="alert-button">
-                                      <button (click)="hideAlert(product)">CALL</button>
-                                      <button (click)="hideAlert(product)">OK</button>
-                                </div>
+                                    <button (click)="callToMart()">Call now</button>
+                                    <button (click)="hideAlert(product)">OK</button>
+                                  </div>
                                 </div>
                               </div>
+                            </div>
+                            
                           </ng-template>
                         
                     <button type="submit" (click)="increaseCount(product)" id="plusButton">+</button>

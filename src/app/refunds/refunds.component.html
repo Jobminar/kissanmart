@@ -1,8 +1,8 @@
 <div class="container">  
     <div class="tittle-container">
-        <div><a (click)="goToPreviousPage()"><img src="assets\solar_arrow-up-linear.png"></a>
+        <div><a (click)="goToPreviousPage()"><img src="assets/solar_arrow-up-linear.png"></a>
         </div>
-        <div class="logo-div"><img src="assets\my-cart\icons8-money-24 (1).png" id="logo">
+        <div class="logo-div"><img src="assets/my-cart/icons8-money-24 (1).png" id="logo">
         </div>
         <div>  <p id="tittle"> Refunds</p></div>
     </div>
@@ -17,10 +17,10 @@
                 <div><p>{{refund.count}}kg </p></div>
                 <div>
                     <div *ngIf="refund.status==='completed'">
-                        <p style="color:#09C43D">{{refund.status}}&nbsp;<img src="assets\my-cart\right.jpg" class="icons">&nbsp;</p>
+                        <p style="color:#09C43D">{{refund.status}}&nbsp;<img src="assets/my-cart/right.jpg" class="icons">&nbsp;</p>
                     </div>
                     <div  class="ststuss">
-                        <p style="color:#FF0000">Pending &nbsp; <img src="assets\my-cart\cross.png" class="icons">&nbsp;</p>
+                        <p style="color:#FF0000">Pending &nbsp; <img src="assets/my-cart/cross.png" class="icons">&nbsp;</p>
                     </div>
                 </div>
             </div>

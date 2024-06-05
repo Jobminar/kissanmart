@@ -1,16 +1,27 @@
 @media screen and (min-width: 360px) and (max-width: 600px) {
+    .container{
+        width: 100%;
+        background-color: #00853E;
+        height:4.5rem ;
+        position: fixed;
+        bottom: 0%;
+        left: 0%;
+        border: none;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
     .main-container
     {
-        width:100%;
+        width:93%;
+       
         height: 3.3rem;
         background-color: #00853E;
         display: flex;
         justify-content: space-evenly;
         text-align: center;
-        position: fixed;
-        bottom: 0%;
-        left: 0%;
-        border: none;
+        /* border: 0.25px solid black; */
+        margin-top: 0.4rem;
         /* position: absolute; */
     }
     .buttons-container
@@ -37,7 +48,7 @@
     .main-container button
     {
         height: 1.8rem;
-        margin-top: 0.3rem;
+        /* margin-top: 0.3rem; */
         margin-bottom: 0.3rem;
         background-color: transparent;
        border: none;
@@ -68,16 +79,19 @@
         top: 0rem;
         left: -0.6rem;
         border-radius: 50%;
+        font-size: 0.9rem;
+        text-align: center;
+        padding-bottom: 1px;
     }
     .myCart span{
         position: relative;
         top: 10px;
         left: 1.25rem;
     }
-    #sp{
+    /* #sp{
         font-size: 0.9rem;
         text-align: center;
         padding-bottom: 1px;
-    }
+    } */
     
     }
